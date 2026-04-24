@@ -1,4 +1,4 @@
-const baseUrl = process.env.SK_API_BASE_URL || 'http://localhost:8000';
+const baseUrl = process.env.SK_API_BASE_URL || 'http://localhost:8010';
 
 function assert(condition, message) {
 	if (!condition) throw new Error(message);

@@ -8,6 +8,7 @@ import { DataStore } from './store/dataStore.js';
 import { createSocketServer } from './realtime/socketServer.js';
 import { createSkRouter } from './routes/skRoutes.js';
 import { createAlbyStubRouter } from './routes/albyStubRoutes.js';
+import { createPodcastIndexRouter } from './routes/podcastIndexRoutes.js';
 import { readSession } from './auth/session.js';
 
 const app = express();
@@ -46,6 +47,13 @@ app.use(
 		albyClientId: config.albyClientId,
 		albyClientSecret: config.albyClientSecret,
 		albyJwtSecret: config.albyJwtSecret
+	})
+);
+app.use(
+	'/api',
+	createPodcastIndexRouter({
+		piApiKey: config.piApiKey,
+		piApiSecret: config.piApiSecret
 	})
 );
 

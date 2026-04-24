@@ -3,7 +3,8 @@
 ## Environment
 
 Required variables:
-- `PORT`
+- `SK_PORT` (dev/local optional override, default is `8010`)
+- `PORT` (production host-assigned port)
 - `SK_JWT_SECRET`
 - `CORS_ORIGIN` (comma-separated allow list)
 - `SK_DATA_PATH` (optional, defaults to `data/store.json`)
@@ -41,6 +42,6 @@ Required variables:
 
 ## Known V1 Gaps
 
-- Alby routes are compatibility stubs.
+- Alby routes have baseline support; full webhook settlement/retry behavior is pending.
 - Triggerboard/soundboard persistence is stubbed.
 - Leaderboard/boostboard sockets currently emit placeholder payloads.
